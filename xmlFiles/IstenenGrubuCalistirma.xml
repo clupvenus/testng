@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="farkli classlardan ortak grup isimlerine sahip methodlari calistirin">
+
+    <!--
+    Farkli packagelar ve claaslar altinda 5 test methodu calsitiracagiz.
+    eger istenen methodalrin tek tek xml dosyasina islenmesi uzun olacaksa
+    calistirilacak methodlarda ortak bir @istenenTag eklenip
+    xml dosyasina @istenenTag eklenen mehodlari calistir diyebiliriz.
+    
+    Bunun icin test hiyerarsisi altinda iki ayri hiyerarsi olustururuz. 
+    1-Calisacak veya calismayacak gruplari belirlemek icin 
+    <groups> altinda <run> altinda grup secimi <include> 
+    2- uygun hiyerarside bu test methodlarinin bulundugu yer
+    
+    -->
+    <test name="mini regression">
+        <groups>
+            <run>
+                <include name="smoke"></include>
+                <exclude name="mr1"></exclude>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests.day10_TestNgFrameWork"></package>
+            <package name="tests.day11_POM_assertions"></package>
+        </packages>
+    </test>
+
+
+
+
+
+</suite>

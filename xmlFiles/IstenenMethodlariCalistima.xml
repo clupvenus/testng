@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="istenen methodlari calistirma">
+
+   <test name="mini smoke">
+       <!-- Pozitif login ve negatif login testlerindan sadece 3. u calistimrka
+       istiyoruz.
+       include iceren demek
+       exclude o haric yani istenmeyen methodu yazacagiz.
+       bu durumbir test methodu bir de test classi calistirmak istiyoruz.
+       eger calistircagmiz dosyalar farkli hiyerarsilere sahipse
+       1-ya ayri test taglerinin arasina koyariz.
+       2-uygun hiyerarsi adimindan yeni bir hiyerarsi olsutururz.
+
+       -->
+       <classes>
+           <class name="tests.day11_POM_assertions.C03_NegatifLoginTest">
+               <methods>
+                   <include name="negatifLogin3">
+
+                   </include>
+               </methods>
+           </class>
+           <class name="tests.day11_POM_assertions.C02_PozitifLoginTesti">
+
+           </class>
+       </classes>
+
+
+
+   </test>
+
+
+
+
+</suite>
